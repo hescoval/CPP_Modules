@@ -21,5 +21,16 @@ void ContactMaker::make_contact()
 
 void ContactMaker::search()
 {
+	Contact to_print;
 
+	try
+	{
+		to_print = user_pb.list_and_find_contact();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	print_contact(to_print);
 }
