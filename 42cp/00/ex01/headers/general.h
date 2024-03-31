@@ -6,7 +6,9 @@
 enum options
 {
 	HEADER,
+	TABLE,
 	OPTIONS,
+	OPT_ERROR,
 	WS_LINE,
 	B_PAD
 };

@@ -1,4 +1,20 @@
 #include "../headers/general.h"
+#include "../headers/Contact.h"
+
+bool fully_numeric(string s)
+{
+	long unsigned int size = s.length();
+
+	if(size == 0)
+		return false;
+		
+	for(long unsigned int i = 0; i < size; i++)
+	{
+		if(!isdigit(s[i]))
+			return false;
+	}
+	return true;
+}
 
 string i_to_s(int num)
 {
@@ -22,48 +38,47 @@ string i_to_s(int num)
 		num /= 10;
 	}
 
-	for(int i = fill.length(); i >= 0; i--)
+	for(int i = fill.length() - 1; i >= 0; i--)
 		ret += fill[i];
 
 	return ret;
 }
 
+bool empty_string(string s)
+{
+	for(long unsigned int i = 0; i < s.length(); i++)
+	{
+		if(!isspace(s[i]))
+			return false;
+	}
+	return true;
+}
+
 void make_uppercase(string &test)
 {
-	for(int i = 0; i < test.size(); i++)
+	for(long unsigned int i = 0; i < test.size(); i++)
 		test[i] = toupper(test[i]);
 }
 
 void trim(string &test)
 {
-	int end = test.size() - 1;
+	int end = test.length() - 1;
 
 	while(end > 0 && isspace(test[end]))
 		end--;
 	
 	test.erase(end + 1);
 
-	int i = 0;
+	long unsigned int i = 0;
 
-	while(i < test.size() && isspace(test[i]))
+	while(i < test.length() && isspace(test[i]))
 		i++;
 	
 	test.erase(0, i);
 }
 
-// Printing
-
-void print_options()
+void tidy(string &s)
 {
-	cout << "1. Add\n\n2. Search\n\n3. Exit" << std::endl;
-}
-
-void print_header()
-{
-	
-}
-
-void print_stuff(options option)
-{
-	print_header();
+	trim(s);
+	make_uppercase(s);
 }

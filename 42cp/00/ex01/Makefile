@@ -2,8 +2,9 @@ NAME = PhoneBook
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
-OBJS = *.o
-SRCS = srcs/*.cpp
+SRCDIR = cpp
+SRCS = $(wildcard $(SRCDIR)/*.cpp)
+OBJS = $(notdir $(SRCS:.cpp=.o))
 
 all: $(NAME)
 

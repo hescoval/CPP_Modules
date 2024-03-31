@@ -12,5 +12,5 @@ class PhoneBook
 		PhoneBook();
 		Contact get_contact(int i);
 		void	add_contact(Contact add);
-		Contact	list_and_find_contact();
+		void	list_and_find_contact();
 };
