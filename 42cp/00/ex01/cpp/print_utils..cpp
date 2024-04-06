@@ -1,5 +1,6 @@
 #include "../headers/general.h"
 #include "../headers/Contact.h"
+#include <iomanip>
 
 void print_stuff(options option);
 
@@ -67,12 +68,8 @@ void print_field(string data)
 	else
 		print = data;
 	
-	while(ws_needed > 0)
-	{
-		cout << ' ';
-		ws_needed--;
-	}
-	cout << print << "|";
+	std::cout << std::setw(10);
+	std::cout << data << "|";
 }
 
 void print_stuff(options option)

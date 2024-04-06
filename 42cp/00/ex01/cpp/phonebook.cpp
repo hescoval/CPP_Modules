@@ -7,7 +7,7 @@ PhoneBook::PhoneBook()
 	existing_contacts = 0;
 }
 
-Contact PhoneBook::get_contact(int i)
+Contact	PhoneBook::get_contact(int i)
 {
 	if(i > 0 && i <= existing_contacts)
 		return Contacts[i - 1];
@@ -24,7 +24,7 @@ void	PhoneBook::add_contact(Contact add)
 	Contacts[c_num++] = add;
 }
 
-void PhoneBook::list_and_find_contact()
+void	PhoneBook::list_and_find_contact()
 {
 	print_stuff(TABLE);
 	if(existing_contacts == 0)

@@ -4,7 +4,7 @@ class ContactMaker
 {
 	private:
 		PhoneBook user_pb;
-		string  get_input(string field);
+		string get_input(string field, string error);
 
 	public:
 		void make_contact();

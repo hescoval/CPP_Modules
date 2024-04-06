@@ -1,7 +1,7 @@
 #include "../headers/ContactMaker.h"
 #include "../headers/utils.h"
 
-string ContactMaker::get_input(string field)
+string ContactMaker::get_input(string field, string error = "No contact field can be empty.")
 {
 	print_stuff(HEADER);
 	string input = "";
@@ -13,10 +13,7 @@ string ContactMaker::get_input(string field)
 	while(empty_string(input))
 	{
 		print_stuff(HEADER);
-		if(field == "Darkest Secret")
-			cout << "Come on, everyone has one." << std::endl;
-		else
-			cout << "No contact field can be empty." << std::endl;
+		cout << error << std::endl;
 		std::getline(std::cin, input);
 		trim(input);
 	}
@@ -32,7 +29,7 @@ void ContactMaker::make_contact()
 	ret.last_name = get_input("Last Name");
 	ret.nick_name = get_input("Nick Name");
 	ret.phone = get_input("Phone Number");
-	ret.darkest_secret = get_input("Darkest Secret");
+	ret.darkest_secret = get_input("Darkest Secret", "Come on, everyone has one.");
 
 	user_pb.add_contact(ret);
 }
