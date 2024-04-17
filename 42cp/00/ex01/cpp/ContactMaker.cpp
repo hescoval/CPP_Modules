@@ -34,14 +34,14 @@ void ContactMaker::make_contact()
 	user_pb.add_contact(ret);
 }
 
-void ContactMaker::search()
+void	ContactMaker::list_contacts()
 {
-	Contact to_print;
-	string input;
+	Contact curr;
+	Contact *to_print;
 
 	try
 	{
-		user_pb.list_and_find_contact();
+		to_print = user_pb.fetch_contacts();
 	}
 	catch(const std::exception& e)
 	{
@@ -50,13 +50,34 @@ void ContactMaker::search()
 		return;
 	}
 
+
+	for(int i = 0; i < user_pb.existing_contacts; i++)
+	{
+		curr = to_print[i];
+		print_ws();
+		cout << "|";
+		print_field(i_to_s(i + 1));
+		print_field(curr.first_name);
+		print_field(curr.last_name);
+		print_field(curr.nick_name);
+		cout << std::endl;
+		print_bpad();
+	}
+}
+
+void ContactMaker::search()
+{
+	Contact to_print;
+	string input;
+
+	list_contacts();
 	cout << "\nWhat entry do you want to look at?" << std::endl;
 	std::getline(std::cin, input);
 	trim(input);
 
 	while(!fully_numeric(input))
 	{
-		user_pb.list_and_find_contact();
+		list_contacts();
 		cout << "\nPlease numbers only (1 - 8)" << std::endl;
 		std::getline(std::cin, input);
 		trim(input);

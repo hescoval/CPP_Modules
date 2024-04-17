@@ -9,4 +9,5 @@ class ContactMaker
 	public:
 		void make_contact();
 		void search();
+		void	list_contacts();
 };

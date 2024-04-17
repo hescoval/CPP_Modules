@@ -24,7 +24,7 @@ void	PhoneBook::add_contact(Contact add)
 	Contacts[c_num++] = add;
 }
 
-void	PhoneBook::list_and_find_contact()
+Contact*	PhoneBook::fetch_contacts()
 {
 	print_stuff(TABLE);
 	if(existing_contacts == 0)
@@ -32,18 +32,5 @@ void	PhoneBook::list_and_find_contact()
 		throw std::runtime_error("\nThere's currently nothing to display in the Phonebook.");
 	}
 
-	Contact curr;
-	
-	for(int i = 0; i < existing_contacts; i++)
-	{
-		curr = Contacts[i];
-		print_ws();
-		cout << "|";
-		print_field(i_to_s(i + 1));
-		print_field(curr.first_name);
-		print_field(curr.last_name);
-		print_field(curr.nick_name);
-		cout << std::endl;
-		print_bpad();
-	}
+	return Contacts;
 }
