@@ -1,8 +1,9 @@
-NAME = file_manip
+NAME = FileSystem
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
-SRCS = $(wildcard *.cpp)
+SRCDIR = srcs
+SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(notdir $(SRCS:.cpp=.o))
 
 all: $(NAME)

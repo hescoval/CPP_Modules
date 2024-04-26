@@ -7,7 +7,7 @@ class Weapon
 {
 	private:
 			string type;
-			
+
 	public:
 			Weapon(string new_Type);
 			const string& getType();

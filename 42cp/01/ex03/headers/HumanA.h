@@ -3,10 +3,9 @@
 
 class HumanA
 {
-	Weapon& Armed_With;
-	string name;
 	private:
-
+			Weapon& Armed_With;
+			string name;
 	public:
 			HumanA(string new_name, Weapon& Wielding);
 			void	attack();

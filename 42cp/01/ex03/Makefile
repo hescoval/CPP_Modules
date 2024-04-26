@@ -6,7 +6,7 @@ SRCDIR = srcs
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(notdir $(SRCS:.cpp=.o))
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
 		$(COMPILER) $(FLAGS) -o $(NAME) $(OBJS)

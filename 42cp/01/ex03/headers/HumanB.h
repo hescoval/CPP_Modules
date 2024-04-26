@@ -3,10 +3,9 @@
 
 class HumanB
 {
-	Weapon* Armed_With;
-	string name;
 	private:
-
+			Weapon* Armed_With;
+			string name;
 	public:
 			HumanB(string new_name);
 			void	attack();

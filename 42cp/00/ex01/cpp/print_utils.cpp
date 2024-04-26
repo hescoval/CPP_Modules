@@ -8,9 +8,13 @@ void print_contact(Contact data)
 {
 	print_stuff(HEADER);
 
-	cout << "You are looking at " << data.first_name << "'s information\n" << std::endl;
+	cout << "You are looking at " << data.get_first() << "'s information\n" << std::endl;
 
-	cout << "First Name: " << data.first_name << "\nLast Name: " << data.last_name << "\nNick Name: " << data.nick_name << "\nPhone Number: " << data.phone << std::endl;
+	cout << "First Name: " << data.get_first();
+	cout << "\nLast Name: " <<  data.get_last();
+	cout << "\nNick Name: " << data.get_nick();
+	cout << "\nPhone Number: " << data.get_phone();
+	cout << "\nDarkest Secret: " << data.get_darkest() << std::endl;
 
 	cout << "\nPress ENTER when you're ready to go back!" << std::endl;
 

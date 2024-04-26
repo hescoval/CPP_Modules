@@ -15,6 +15,7 @@ class Zombie
 		Zombie(string new_name);
 		~Zombie();
 		void announce();
+
 		void set_name(string new_name);
 		string get_name();
 };

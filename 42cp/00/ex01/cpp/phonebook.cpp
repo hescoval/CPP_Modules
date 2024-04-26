@@ -1,5 +1,4 @@
 #include "../headers/PhoneBook.h"
-#include "../headers/utils.h"
 
 PhoneBook::PhoneBook()
 {
@@ -26,11 +25,9 @@ void	PhoneBook::add_contact(Contact add)
 
 Contact*	PhoneBook::fetch_contacts()
 {
-	print_stuff(TABLE);
 	if(existing_contacts == 0)
 	{
 		throw std::runtime_error("\nThere's currently nothing to display in the Phonebook.");
 	}
-
 	return Contacts;
 }
