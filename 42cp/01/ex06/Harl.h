@@ -9,7 +9,7 @@ using std::cout;
 class Harl
 {
 	private:
-		int Ignore;
+		int		Ignore;
 		void	debug( void );
 		void	info( void );
 		void	warning( void );

@@ -9,7 +9,6 @@ int main(int ac, char **av)
 	}
 
 	Harl machine;
-
 	machine.set_ignore(string(av[1]));
 	
 	string complaints[4] =

@@ -6,6 +6,11 @@ PhoneBook::PhoneBook()
 	existing_contacts = 0;
 }
 
+int	PhoneBook::get_n_contacts()
+{
+	return existing_contacts;
+}
+
 Contact	PhoneBook::get_contact(int i)
 {
 	if(i > 0 && i <= existing_contacts)

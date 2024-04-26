@@ -13,11 +13,11 @@ bool valid_input(string s)
 
 int main()
 {
-	string input = "";
 	ContactMaker helper;
 
 	while(1)
-	{	
+	{
+		string input = "";
 		print_stuff(OPTIONS);
 		std::getline(std::cin, input);
 		tidy(input);
@@ -35,5 +35,6 @@ int main()
 		else
 			break;
 	}
+	
 	print_end();
 }

@@ -13,6 +13,7 @@ string ContactMaker::get_input(string field, string error = "No contact field ca
 	while(empty_string(input))
 	{
 		print_stuff(HEADER);
+		cout << "You are inputting the contact's " << field << "\n" << std::endl;
 		cout << error << std::endl;
 		std::getline(std::cin, input);
 		trim(input);
@@ -38,6 +39,7 @@ void	ContactMaker::list_contacts()
 {
 	Contact curr;
 	Contact *to_print;
+	int	total_contacts = user_pb.get_n_contacts();
 
 	try
 	{
@@ -50,7 +52,7 @@ void	ContactMaker::list_contacts()
 		return;
 	}
 
-	for(int i = 0; i < user_pb.existing_contacts; i++)
+	for(int i = 0; i < total_contacts; i++)
 	{
 		curr = to_print[i];
 		print_ws();
