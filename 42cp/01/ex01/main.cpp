@@ -13,12 +13,20 @@ int main(int ac, char **av)
 	string name(av[1]);
 
 	int n_z = 5;
-	Zombie* horde = zombieHorde(n_z, name);
-
-	for(int i = 0; i < n_z; i++)
+	try
 	{
-		horde[i].announce();
-	}
+		Zombie* horde = zombieHorde(n_z, name);
 
-	delete[] horde;
+		for(int i = 0; i < n_z; i++)
+		{
+			horde[i].announce();
+		}
+
+		delete[] horde;
+	}
+	catch(const std::bad_alloc& e)
+	{
+		cout << "Error: Couldn't allocate zombie horde" << std::endl;
+		return 1;
+	}
 }
