@@ -1,9 +1,15 @@
 #include "Zombie.h"
 
+int bug(string str)
+{
+	cout << str << std::endl;
+	return 1;
+}
+
 int main(int ac, char **av)
 {
 	if(ac != 2)
-		return 0;
+		return bug("Error: wrong number of arguments\nUsage: ./Zombie \"name\"");
 	string name(av[1]);
 
 	int n_z = 5;

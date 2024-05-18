@@ -1,12 +1,12 @@
-NAME = Zombie
-COMPILER = c++ -g
-FLAGS = -Wall -Wextra -Werror
+NAME = ClapTrap
+COMPILER = c++
+FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
-SRCDIR = cpp
-SRCS = $(wildcard *.cpp)
+SRCDIR = srcs
+SRCS = $(wildcard $(SRCDIR)/*.cpp) main.cpp
 OBJS = $(notdir $(SRCS:.cpp=.o))
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
 		$(COMPILER) $(FLAGS) -o $(NAME) $(OBJS)

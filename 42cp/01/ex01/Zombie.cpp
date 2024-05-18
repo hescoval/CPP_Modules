@@ -1,6 +1,5 @@
 #include "Zombie.h"
 
-
 void Zombie::announce()
 {
 	cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;

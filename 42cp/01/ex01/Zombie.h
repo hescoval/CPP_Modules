@@ -2,6 +2,7 @@
 #include <cctype>
 #include <string>
 #include <cstdlib>
+#include <vector>
 
 using std::string;
 using std::cout;
@@ -21,5 +22,5 @@ class Zombie
 };
 
 void randomChump( string name );
-Zombie* newZombie( string name );
 Zombie* zombieHorde( int N, std::string name );
+Zombie* newZombie( string name );
