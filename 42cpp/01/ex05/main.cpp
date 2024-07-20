@@ -1,16 +1,9 @@
 #include "Harl.h"
 
-int main(int ac, char **av)
+int main()
 {
-	if(ac != 2)
-	{
-		cout << "Incorrect Usage!\n ./(program name) (desired level)" << std::endl;
-		return 1;
-	}
-
 	Harl machine;
-	machine.set_ignore(string(av[1]));
-	
+
 	string complaints[4] =
 	{
 		"warning",
@@ -22,6 +15,7 @@ int main(int ac, char **av)
 	for(int i = 0; i < 4; i++)
 	{
 		machine.complain(complaints[i]);
+		cout << "\n";
 	}
 
 	machine.complain("what");

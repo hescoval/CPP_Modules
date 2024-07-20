@@ -14,6 +14,8 @@ class Harl
 		void info( void );
 		void warning( void );
 		void error( void );
+		void (Harl::*funcArray[4])(void);
+
 
 	public:
 		Harl();

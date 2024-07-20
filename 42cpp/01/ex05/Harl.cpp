@@ -29,6 +29,10 @@ void Harl::error( void )
 Harl::Harl()
 {
 	Ignore = -1;
+	funcArray[0] = &Harl::debug;
+    funcArray[1] = &Harl::info;
+    funcArray[2] = &Harl::warning;
+    funcArray[3] = &Harl::error;
 }
 
 Harl::~Harl()
@@ -41,15 +45,7 @@ void Harl::complain( string level )
 	for(long unsigned int i = 0; i < level.size(); i++)
 		level[i] = toupper(level[i]);
 
-	void (Harl::*funcArray[4])() = 
-	{ 
-		&Harl::debug, 
-		&Harl::info, 
-		&Harl::warning, 
-		&Harl::error 
-	};
-
-	string levels[4] = 
+	string levels[4] =
 	{
 		"DEBUG",
 		"INFO",

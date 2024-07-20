@@ -15,10 +15,12 @@ class Harl
 		void	warning( void );
 		void	error( void );
 		int		find_level( string level );
+		void (Harl::*funcArray[4])(void);
+
 
 	public:
 		Harl();
 		~Harl();
-		void	complain( string level );
-		void	set_ignore(	string level);
+		void	complain(	);
+		void	call_functions(	string level);
 };

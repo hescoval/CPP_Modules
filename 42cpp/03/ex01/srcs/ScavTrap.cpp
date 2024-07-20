@@ -18,7 +18,7 @@ ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
 	LOG("ScavTrap Copy constructor has been called");
 }
 
-ScavTrap::ScavTrap(string new_name) : ClapTrap(new_name)
+
 {
 	LOG("ScavTrap Parametric constructor has been called");
 	this->hp = 100;
