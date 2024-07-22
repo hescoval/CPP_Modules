@@ -3,10 +3,12 @@
 
 # include <iostream>
 # include <string>
-#include "Animal.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
+
 	public:
 
 		Cat();
@@ -14,9 +16,12 @@ class Cat : public Animal
 		~Cat();
 
 		void makeSound() const;
+		Brain* getBrain() const;
+		Cat &				operator=( Cat const & rhs );
 
 	private:
-
+		Brain* brain;
 };
+
 
 #endif /* ************************************************************* CAT_H */

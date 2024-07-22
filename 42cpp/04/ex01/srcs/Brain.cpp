@@ -1,16 +1,19 @@
-#include "../headers/Animal.hpp"
+#include "../headers/Brain.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
+Brain::Brain()
 {
+	for(int i = 0; i < 100; i++)
+		ideas[i] = "I'm hungry i want to eat";
 }
 
-Animal::Animal( const Animal & src )
+Brain::Brain( const Brain & src )
 {
-	this->type = src.getType();
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = src.ideas[i];
 }
 
 
@@ -18,7 +21,7 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Brain::~Brain()
 {
 }
 
@@ -27,32 +30,24 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Brain &				Brain::operator=( Brain const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.getType();
-	}
+	if ( this == &rhs )
+		return *this;
+
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = rhs.ideas[i];
 	return *this;
 }
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
-{
-	std::cout << "Animal sound" << std::endl;
-}
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-string Animal::getType() const
-{
-	return this->type;
-}
 
 /* ************************************************************************** */

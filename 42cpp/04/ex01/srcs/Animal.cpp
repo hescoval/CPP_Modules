@@ -6,7 +6,7 @@
 
 Animal::Animal()
 {
-}
+	}
 
 Animal::Animal( const Animal & src )
 {

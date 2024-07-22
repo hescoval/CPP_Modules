@@ -1,25 +1,27 @@
-#include "../headers/Animal.hpp"
+#include "../headers/Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
+Cat::Cat()
 {
+	this->type = "Cat";
+	this->brain = new Brain();
 }
 
-Animal::Animal( const Animal & src )
+Cat::Cat(const Cat &original) : Animal(original)
 {
-	this->type = src.getType();
+	this->brain = new Brain(*original.brain);
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Cat::~Cat()
 {
+	delete this->brain;
 }
 
 
@@ -27,12 +29,14 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.getType();
-	}
+	if ( this == &rhs )
+		return *this;
+	Brain* newBrain = new Brain(*rhs.brain);
+
+	delete this->brain;
+	this->brain = newBrain;
 	return *this;
 }
 
@@ -40,19 +44,18 @@ Animal &				Animal::operator=( Animal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "Animal sound" << std::endl;
+	cout << "Meow Meow" << std::endl;
 }
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-string Animal::getType() const
+Brain* Cat::getBrain() const
 {
-	return this->type;
+	return this->brain;
 }
 
 /* ************************************************************************** */
