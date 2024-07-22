@@ -18,4 +18,10 @@ int main()
 	meta->makeSound();
 	wrong->makeSound();
 	wrongCat->makeSound();
+
+	delete j;
+	delete i;
+	delete wrong;
+	delete wrongCat;
+	delete meta;
 }
