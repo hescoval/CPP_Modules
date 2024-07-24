@@ -6,12 +6,16 @@
 
 Dog::Dog()
 {
+	cout << GREEN "A cute little puppy has showed up!" << endl;
 	this->type = "Dog";
 	this->brain = new Brain();
 }
 
 
-Dog::Dog(const Dog &original) : Animal(original){}
+Dog::Dog(const Dog &original) : Animal(original)
+{
+	this->brain = new Brain(*original.brain);
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -20,6 +24,7 @@ Dog::Dog(const Dog &original) : Animal(original){}
 Dog::~Dog()
 {
 	delete this->brain;
+	cout << RED "Dog is being ... sent to a better place" RESET << endl;
 }
 
 

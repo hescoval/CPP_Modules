@@ -1,24 +1,20 @@
-#include "../headers/Animal.hpp"
+#include "../headers/Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
-{
-	}
+Cure::Cure() : AMateria("cure"){}
 
-Animal::Animal( const Animal & src )
-{
-	this->type = src.getType();
-}
+
+Cure::Cure( const Cure & src ) : AMateria(src){}
 
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Cure::~Cure()
 {
 }
 
@@ -27,32 +23,30 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Cure &				Cure::operator=( Cure const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.getType();
-	}
+	(void)rhs;
 	return *this;
 }
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+AMateria* Cure::clone() const
 {
-	std::cout << "Animal sound" << std::endl;
+	return new Cure();
 }
 
+void Cure::use(ICharacter& target)
+{
+	cout << GREEN "* Heals " << target.getName() << "'s wounds *" RESET <<  endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-string Animal::getType() const
-{
-	return this->type;
-}
 
 /* ************************************************************************** */

@@ -6,6 +6,8 @@
 
 WrongAnimal::WrongAnimal()
 {
+	cout << RED "WrongAnimal (PARENT CLASS) is being created" RESET << std::endl;
+	this->type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal & src )
@@ -20,6 +22,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal & src )
 
 WrongAnimal::~WrongAnimal()
 {
+	cout << RED "WrongAnimal (PARENT CLASS) is being destroyed" RESET << std::endl;
 }
 
 

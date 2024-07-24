@@ -1,27 +1,20 @@
-#include "../headers/Brain.hpp"
+#include "../headers/Ice.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
-{
-	for(int i = 0; i < 100; i++)
-		ideas[i] = "I'm hungry i want to eat";
-}
+Ice::Ice() : AMateria("ice"){}
 
-Brain::Brain( const Brain & src )
-{
-	for(int i = 0; i < 100; i++)
-		this->ideas[i] = src.ideas[i];
-}
+
+Ice::Ice( const Ice & src ) : AMateria(src){}
 
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+Ice::~Ice()
 {
 }
 
@@ -30,13 +23,9 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Ice &				Ice::operator=( Ice const & rhs )
 {
-	if ( this == &rhs )
-		return *this;
-
-	for(int i = 0; i < 100; i++)
-		this->ideas[i] = rhs.ideas[i];
+	(void)rhs;
 	return *this;
 }
 
@@ -45,9 +34,19 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+AMateria* Ice::clone() const
+{
+	return new Ice();
+}
+
+void Ice::use(ICharacter& target)
+{
+	cout << BRIGHT_CYAN "* shoots an ice bolt at " << target.getName() << " *" RESET << endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
 
 /* ************************************************************************** */

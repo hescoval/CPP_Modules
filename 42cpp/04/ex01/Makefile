@@ -1,7 +1,7 @@
 MAKEFLAGS += --no-print-directory
 NAME = Animal
 COMPILER = c++
-FLAGS = -Wall -Wextra -Werror --std=c++98
+FLAGS = -Wall -Wextra --std=c++98
 RM = rm -rf
 SRCDIR = srcs
 OBJDIR = objs

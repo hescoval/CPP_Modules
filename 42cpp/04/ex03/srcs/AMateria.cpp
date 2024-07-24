@@ -1,44 +1,46 @@
-#include "../headers/Dog.hpp"
+#include "../headers/AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+AMateria::AMateria( const AMateria & src )
 {
-	cout << GREEN "A cute little puppy has showed up!" << endl;
-	this->type = "Dog";
+	this->_type = src.getType();
 }
 
+AMateria::AMateria(std::string const & type)
+{
+	this->_type = type;
+}
 
-Dog::Dog(const Dog &original) : Animal(original){}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+AMateria::~AMateria()
 {
-	cout << RED "Dog is being ... sent to a better place" RESET << endl;
 }
-
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const
+void AMateria:: use(ICharacter& target)
 {
-	cout << "Bark Bark" << std::endl;
+	(void)target;
 }
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+const string& AMateria :: getType() const
+{
+	return this->_type;
+}
 
 
 /* ************************************************************************** */

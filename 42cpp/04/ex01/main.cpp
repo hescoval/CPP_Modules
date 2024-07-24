@@ -4,19 +4,12 @@
 
 int main()
 {
-	Cat* j = new Cat();
-	Cat* i = new Cat(*j);
-	Cat* k = new Cat();
+	Dog basic;
+	{
+		Animal *newDog = new Dog(basic);
+		delete newDog;
+		Dog tmp = basic;
+	}
 
-	*k = *j;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-
-	cout << "Brain of j " << j->getBrain() << endl;
-	cout << "Brain of i " << i->getBrain() << endl;
-	cout << "Brain of k " << k->getBrain() << endl;
-
-	delete k;
-	delete j;
-	delete i;
+	cout << basic.getBrain() << endl;
 }

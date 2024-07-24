@@ -4,23 +4,28 @@
 
 void first_main()
 {
+	//If you uncomment the line below this it won't compile
+	//const Animal* wrong = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
+
 	delete j;
 	delete i;
 }
 
 int main()
 {
+	first_main();
+
 	Cat* j = new Cat();
 	Cat* i = new Cat(*j);
 	Cat* k = new Cat();
-
 	*k = *j;
+
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 

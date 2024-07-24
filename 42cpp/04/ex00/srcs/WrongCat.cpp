@@ -6,6 +6,7 @@
 
 WrongCat::WrongCat()
 {
+	cout << RED "WrongCat is being created" RESET << endl;
 	this->type = "WrongCat";
 }
 
@@ -17,6 +18,7 @@ WrongCat::WrongCat(const WrongCat &original) : WrongAnimal(original){}
 
 WrongCat::~WrongCat()
 {
+	cout << RED "WrongCat is being ... sent to a better place" RESET << endl;
 }
 
 

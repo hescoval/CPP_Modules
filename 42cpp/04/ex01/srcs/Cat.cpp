@@ -6,6 +6,7 @@
 
 Cat::Cat()
 {
+	cout << GREEN "An evil evil cat has been born!" RESET << endl;
 	this->type = "Cat";
 	this->brain = new Brain();
 }
@@ -22,6 +23,7 @@ Cat::Cat(const Cat &original) : Animal(original)
 Cat::~Cat()
 {
 	delete this->brain;
+	cout << RED "Cat is being ... sent to a better place" RESET << endl;
 }
 
 
@@ -33,8 +35,8 @@ Cat &				Cat::operator=( Cat const & rhs )
 {
 	if ( this == &rhs )
 		return *this;
-	Brain* newBrain = new Brain(*rhs.brain);
 
+	Brain* newBrain = new Brain(*rhs.brain);
 	delete this->brain;
 	this->brain = newBrain;
 	return *this;
