@@ -2,7 +2,6 @@
 # define AMATERIA_HPP
 
 # include "general.hpp"
-
 # include "ICharacter.hpp"
 
 class ICharacter;

@@ -3,7 +3,8 @@
 
 #include "general.hpp"
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Ice : public AMateria
 {

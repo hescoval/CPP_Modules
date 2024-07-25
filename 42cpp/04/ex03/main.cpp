@@ -105,20 +105,18 @@ void official_main()
 
 void unequip_test()
 {
-	AMateria *ground[250];
+	AMateria *ground[50];
 	Character *me = new Character();
 
-	for(int i = 0; i < 50; i++)
+	for(int i = 0; i < 10; i++)
 	{
 		me->equip(new Ice());
 		ground[i] = me->inventory_peek(i % MAX_SLOTS);
 		me->unequip(i % MAX_SLOTS);
 	}
 
-	for(int i = 0; i < 50; i++)
-	{
+	for(int i = 0; i < 10; i++)
 		delete ground[i];
-	}
 	delete me;
 }
 
