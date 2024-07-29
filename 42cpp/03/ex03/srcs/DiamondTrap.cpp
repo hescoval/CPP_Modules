@@ -6,7 +6,7 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), ScavTrap("default_clap_name"), FragTrap("default_clap_name")
 {
-	LOG("DiamondTrap Default constructor has been called");
+	LOG(GREEN"DiamondTrap Default constructor has been called"RESET);
 	this->name = "default";
 	this->FragTrap::hp = 100;
 	this->ScavTrap::ep = 50;
@@ -15,7 +15,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), ScavTrap("default_cl
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src ) : ClapTrap(src.getDName() + "_clap_name"), ScavTrap(src.getDName() + "_clap_name"), FragTrap(src.getDName() + "_clap_name")
 {
-	LOG("DiamondTrap Copy constructor has been called");
+	LOG(GREEN"DiamondTrap Copy constructor has been called"RESET);
 	if (this == &src)
 		return ;
 	this->name = src.getDName();
@@ -26,7 +26,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap & src ) : ClapTrap(src.getDName() + 
 
 DiamondTrap::DiamondTrap(string new_name) : ClapTrap(new_name + "_clap_name"), ScavTrap(new_name + "_clap_name"), FragTrap(new_name + "_clap_name")
 {
-	LOG("DiamondTrap Parametric constructor has been called");
+	LOG(GREEN"DiamondTrap Parametric constructor has been called"RESET);
 	this->DiamondTrap::name = new_name;
 	this->FragTrap::hp = 100;
 	this->ScavTrap::ep = 50;
@@ -35,7 +35,7 @@ DiamondTrap::DiamondTrap(string new_name) : ClapTrap(new_name + "_clap_name"), S
 
 DiamondTrap::~DiamondTrap()
 {
-	LOG("DiamondTrap Default destructor has been called");
+	LOG(RED"DiamondTrap Default destructor has been called"RESET);
 }
 
 

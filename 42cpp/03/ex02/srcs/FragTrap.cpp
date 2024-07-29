@@ -7,7 +7,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	LOG("FragTrap Default constructor has been called");
+	LOG(GREEN"Trap Default constructor has been called"RESET);
 	this->hp = 100;
 	this->ep = 100;
 	this->ad = 30;
@@ -15,12 +15,12 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap( const FragTrap & src ) : ClapTrap(src)
 {
-	LOG("FragTrap Copy constructor has been called");
+	LOG(GREEN"Trap Copy constructor has been called"RESET);
 }
 
 FragTrap::FragTrap(string new_name) : ClapTrap(new_name)
 {
-	LOG("FragTrap Parametric constructor has been called");
+	LOG(GREEN"Trap Parametric constructor has been called"RESET);
 	this->hp = 100;
 	this->ep = 100;
 	this->ad = 30;
@@ -33,7 +33,7 @@ FragTrap::FragTrap(string new_name) : ClapTrap(new_name)
 
 FragTrap::~FragTrap()
 {
-	LOG("FragTrap Default destructor has been called");
+	LOG(RED"Trap Default destructor has been called"RESET);
 }
 
 

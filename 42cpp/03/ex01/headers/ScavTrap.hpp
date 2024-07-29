@@ -13,7 +13,7 @@
 
 class ScavTrap : public ClapTrap
 {
-	public:
+	public:	
 		ScavTrap(const ScavTrap& trap);
 		ScavTrap();
 		ScavTrap(string new_name);

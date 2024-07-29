@@ -6,10 +6,10 @@
 class ClapTrap
 {
 	private:
+		string name;
 		int hp;
 		int ep;
 		int ad;
-		string name;
 
 	public:
 		string getName() const;

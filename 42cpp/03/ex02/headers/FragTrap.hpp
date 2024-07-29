@@ -19,7 +19,7 @@ class FragTrap : public ClapTrap
 		FragTrap(string new_name);
 		void 	highFivesGuys();
 		virtual ~FragTrap();
-		void attack(const string& target);
+		void 	attack(const string& target);
 
 
 	FragTrap &			operator=( FragTrap const & rhs );

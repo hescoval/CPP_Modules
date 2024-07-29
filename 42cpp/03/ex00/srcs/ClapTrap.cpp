@@ -6,8 +6,8 @@
 
 ClapTrap::ClapTrap()
 {
-	cout << "Default constructor has been called" << std::endl;
-	this->name = "Jonh Doe";
+	cout << GREEN "Default constructor has been called" RESET << std::endl;
+	this->name = "John Doe";
 	this->hp = 10;
 	this->ep = 10;
 	this->ad = 0;
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(string new_name)
 {
-	cout << "Parameter constructor has been called" << std::endl;
+	cout << GREEN "Parameter constructor has been called" RESET << std::endl;
 	this->name = new_name;
 	this->hp = 10;
 	this->ep = 10;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(string new_name)
 
 ClapTrap::ClapTrap( const ClapTrap & rhs )
 {
-		cout << "Copy constructor has been called" << std::endl;
+		cout << GREEN "Copy constructor has been called" RESET << std::endl;
 		this->name = rhs.getName();
 		this->ad = rhs.getAd();
 		this->hp = rhs.getHp();
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap( const ClapTrap & rhs )
 
 ClapTrap::~ClapTrap()
 {
-	cout << "Default destructor has been called" << std::endl;
+	cout << RED "Default destructor has been called" RESET << std::endl;
 }
 
 

@@ -6,7 +6,7 @@
 
 ClapTrap::ClapTrap()
 {
-	LOG("Claptrap Default constructor has been called");
+	LOG(GREEN "Claptrap Default constructor has been called" RESET);
 	this->name = "John Doe";
 	this->hp = 10;
 	this->ep = 10;
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(string new_name)
 {
-	LOG("ClapTrap Parametric constructor has been called");
+	LOG(GREEN "ClapTrap Parametric constructor has been called" RESET);
 	this->name = new_name;
 	this->hp = 10;
 	this->ep = 10;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(string new_name)
 
 ClapTrap::ClapTrap( const ClapTrap & rhs )
 {
-	LOG("ClapTrap Copy constructor has been called");
+	LOG(GREEN "ClapTrap Copy constructor has been called" RESET);
 	this->name = rhs.getName();
 	this->ad = rhs.getAd();
 	this->hp = rhs.getHp();
@@ -38,8 +38,9 @@ ClapTrap::ClapTrap( const ClapTrap & rhs )
 
 ClapTrap::~ClapTrap()
 {
-	cout << "Default destructor has been called" << std::endl;
+	cout << RED "Default destructor has been called" RESET << std::endl;
 }
+
 
 
 /*

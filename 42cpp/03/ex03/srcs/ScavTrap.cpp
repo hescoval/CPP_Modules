@@ -7,7 +7,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	LOG("ScavTrap Default constructor has been called");
+	LOG(GREEN "ScavTrap Default constructor has been called" RESET);
 	this->hp = 100;
 	this->ep = 50;
 	this->ad = 20;
@@ -15,12 +15,13 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
 {
-	LOG("ScavTrap Copy constructor has been called");
+	LOG(GREEN "ScavTrap Copy constructor has been called" RESET);
 }
+
 
 ScavTrap::ScavTrap(string new_name) : ClapTrap(new_name)
 {
-	LOG("ScavTrap Parametric constructor has been called");
+	LOG(GREEN "ScavTrap Parametric constructor has been called" RESET);
 	this->hp = 100;
 	this->ep = 50;
 	this->ad = 20;
@@ -33,8 +34,9 @@ ScavTrap::ScavTrap(string new_name) : ClapTrap(new_name)
 
 ScavTrap::~ScavTrap()
 {
-	LOG("ScavTrap Default destructor has been called");
+	LOG(RED "ScavTrap Default destructor has been called" RESET);
 }
+
 
 
 /*

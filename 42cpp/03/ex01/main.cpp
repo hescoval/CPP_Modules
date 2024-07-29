@@ -13,9 +13,8 @@ int main()
 
 	// Barrage of attacks
 	while(scav.getEp() > 0)
-	{
 		scav.attack("random name");
-	}
+		
 	scav.attack("random name");
 	
 	cout << scav << std::endl;
