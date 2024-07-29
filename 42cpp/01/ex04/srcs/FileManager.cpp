@@ -19,7 +19,7 @@ void FileManager::close_files()
 
 void FileManager::write_to(string file_name)
 {
-	outfile.open(file_name.c_str());
+	outfile.open(file_name.c_str());	
 	if(outfile.fail())
 	{
 		outfile.close();

@@ -6,7 +6,6 @@
 
 Dog::Dog()
 {
-	cout << GREEN "A cute little puppy has showed up!" << endl;
 	this->type = "Dog";
 }
 
@@ -19,7 +18,6 @@ Dog::Dog(const Dog &original) : Animal(original){}
 
 Dog::~Dog()
 {
-	cout << RED "Dog is being ... sent to a better place" RESET << endl;
 }
 
 

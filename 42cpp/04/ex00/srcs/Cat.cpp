@@ -6,7 +6,6 @@
 
 Cat::Cat()
 {
-	cout << GREEN "An evil evil cat has been born!" RESET << endl;
 	this->type = "Cat";
 }
 
@@ -18,7 +17,6 @@ Cat::Cat(const Cat &original) : Animal(original){}
 
 Cat::~Cat()
 {
-	cout << RED "Cat is being ... sent to a better place" RESET << endl;
 }
 
 

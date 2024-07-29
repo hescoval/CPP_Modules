@@ -104,6 +104,11 @@ Fixed		Fixed::operator++(int)
 
 Fixed		Fixed::operator/(Fixed const& right)
 {
+	if (right.toFloat() == 0)
+	{
+		cout << "Error: Division by zero, defaulting result to 0" << endl;
+		return Fixed(0);
+	}
 	return Fixed(this->toFloat() / right.toFloat());
 }
 

@@ -1,4 +1,4 @@
-#include "Zombie.h"
+#include "headers/Zombie.h"
 
 int bug(string str)
 {
@@ -12,15 +12,13 @@ int main(int ac, char **av)
 		return bug("Error: wrong number of arguments\nUsage: ./Zombie \"name\"");
 	string name(av[1]);
 
-	int n_z = 5;
+	int n_z = __INT_MAX__;
 	try
 	{
 		Zombie* horde = zombieHorde(n_z, name);
 
 		for(int i = 0; i < n_z; i++)
-		{
 			horde[i].announce();
-		}
 
 		delete[] horde;
 	}

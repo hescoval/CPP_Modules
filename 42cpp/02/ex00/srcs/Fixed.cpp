@@ -44,7 +44,7 @@ Fixed &				Fixed::operator=( Fixed const & original )
 
 std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 {
-	o << "Value = " << i.getRawBits();
+	o << "Value = " << i.getRawBits() << endl;
 	return o;
 }
 

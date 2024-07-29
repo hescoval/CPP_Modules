@@ -6,7 +6,6 @@
 
 Brain::Brain()
 {
-	cout << GREEN "A Brain has come to life" RESET << endl;
 	for(int i = 0; i < 100; i++)
 		ideas[i] = "I'm hungry i want to eat";
 }
@@ -24,7 +23,6 @@ Brain::Brain( const Brain & src )
 
 Brain::~Brain()
 {
-	cout << RED "A Brain has shriveled up too much" RESET << endl;
 }
 
 

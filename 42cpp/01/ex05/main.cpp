@@ -6,7 +6,7 @@ int main()
 
 	string complaints[4] =
 	{
-		"warning",
+		"WArNing",
 		"dEBug",
 		"error",
 		"info"

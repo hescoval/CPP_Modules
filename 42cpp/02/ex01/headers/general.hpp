@@ -4,5 +4,6 @@
 #include <cstdlib>
 #include <math.h>
 
+using std::endl;
 using std::string;
 using std::cout;

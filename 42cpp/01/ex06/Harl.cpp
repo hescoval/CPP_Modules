@@ -94,32 +94,14 @@ void Harl::call_functions( string level )
 
 	switch(match)
 	{
-		case(3):
-		{
-			(this->*funcArray[3])();
-			(this->*funcArray[2])();
-			(this->*funcArray[1])();
-			(this->*funcArray[0])();
-			break;
-		}
-		case(2):
-		{
-			(this->*funcArray[2])();
-			(this->*funcArray[1])();
-			(this->*funcArray[0])();
-			break;
-		}
-		case(1):
-		{
-			(this->*funcArray[1])();
-			(this->*funcArray[0])();
-			break;
-		}
-		case(0):
-		{
-			(this->*funcArray[0])();
-			break;
-		}
+		case(ERROR):
+			(this->*funcArray[ERROR])();
+		case(WARNING):
+			(this->*funcArray[WARNING])();
+		case(INFO):
+			(this->*funcArray[INFO])();
+		case(DEBUG):
+			(this->*funcArray[DEBUG])();
 		default:
 		{
 			break;

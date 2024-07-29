@@ -6,9 +6,7 @@
 
 Animal::Animal()
 {
-	cout << GREEN "Animal (PARENT CLASS) has been born" RESET << endl;
-	this->type = "Animal";
-}
+	}
 
 Animal::Animal( const Animal & src )
 {
@@ -22,7 +20,6 @@ Animal::Animal( const Animal & src )
 
 Animal::~Animal()
 {
-	cout << GREEN "Animal (PARENT CLASS) is being destroyed" RESET << endl;
 }
 
 
