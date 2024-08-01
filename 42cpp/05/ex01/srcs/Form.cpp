@@ -15,7 +15,7 @@ Form::Form(string const name, bool isSigned, int gradeToExecute, int gradeToSign
 		throw Form::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)
 		throw Form::GradeTooLowException();
-	cout << GREEN << "Form \"" <<  name << "\" got certified " RESET << endl;
+	cout << GREEN << "Form \"" <<  name << "\" has passed" RESET << endl;
 }
 
 Form::Form( const Form & src ) : 
