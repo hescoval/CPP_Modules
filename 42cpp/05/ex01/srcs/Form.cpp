@@ -7,10 +7,10 @@
 Form::Form(string const name, bool isSigned, int gradeToExecute, int gradeToSign) :
 		 _name(name),
 		 _signed(isSigned),
-		 _gradeToExecute(gradeToExecute),
-		 _gradeToSign(gradeToSign)
+		 _gradeToSign(gradeToSign),
+		 _gradeToExecute(gradeToExecute)
 {
-	cout << YELLOW << "Form \"" <<  name << "\" trying to get certified " "(gradeToSign = " << gradeToSign << ", gradeToExecute = " << gradeToExecute << ")" RESET << endl;
+	cout << YELLOW << "Trying to pass the Form \"" <<  name << "\" " "(gradeToSign = " << gradeToSign << ", gradeToExecute = " << gradeToExecute << ")" RESET << endl;
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
 	if (gradeToSign > 150 || gradeToExecute > 150)
@@ -61,12 +61,12 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return "This form's grade is too high";
+	return "One of this form's grade is too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return "This form's grade is too low";
+	return "One of this form's grade is too low";
 }
 
 /*

@@ -79,6 +79,19 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return "This Bureaucrat's Grade is too low";
 }
 
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		cout << GREEN << this->getName() << " signs " << form.getName() << RESET << endl;
+	}
+	catch(const std::exception& e)
+	{
+		cout << RED << this->getName() << " cannot sign " << form.getName() << " because his grade wasn't high enough." << RESET << endl;
+	}
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include "general.hpp"
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -17,6 +18,8 @@ class Bureaucrat
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 
+
+		void			signForm(Form &form);
 
 		string const &	getName() const;
 		int				getGrade() const;
