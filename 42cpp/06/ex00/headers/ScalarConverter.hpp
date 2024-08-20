@@ -2,7 +2,7 @@
 # define SCALARCONVERTER_HPP
 
 #include "general.hpp"
-#include "sstream"
+#include <iomanip>
 
 class ScalarConverter
 {
@@ -22,6 +22,7 @@ class ScalarConverter
 		static void 		printFloat(float num, string str);
 		static void 		printDouble(double num, string str);
 
+		static bool			check_gibberish(string str);
 		static bool		    check_Char(string str);
 		static bool		    check_Int(string str);
 		static bool		    check_Float(string str);
