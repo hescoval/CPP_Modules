@@ -79,7 +79,7 @@ bool	ScalarConverter::check_Float(string str)
 	bool f_loc = str.find_last_of("f") != std::string::npos;
 	bool dot_loc = str.find_last_of(".") != std::string::npos;
 
-	if(!f_loc && !dot_loc)
+	if(!f_loc || !dot_loc)
 		return false;
 
 	float num_representation = strtof(str.c_str(), NULL);
@@ -95,12 +95,10 @@ bool	ScalarConverter::check_Float(string str)
 bool	ScalarConverter::check_Double(string str)
 {
 	bool dot_loc = str.find_last_of(".") != std::string::npos;
-
 	if(!dot_loc)
 		return false;
 
 	double num_representation = strtod(str.c_str(), NULL);
-	cout << CYAN << num_representation << RESET << endl;
 
 	printChar(static_cast<char>(num_representation), str);
 	printInt(static_cast<int>(num_representation), str);
@@ -113,11 +111,9 @@ bool	ScalarConverter::check_Double(string str)
 void	ScalarConverter::printChar(char c, string str)
 {
 	long double num = strtold(str.c_str(), NULL);
-	cout << GREEN << std::numeric_limits<char>::min() << RESET << endl;
 
 	if(num > std::numeric_limits<char>::max() || num < std::numeric_limits<char>::min())
 		cout << "char: Over/Under Flow" << endl;
-
 	else if(isprint(c))
 		cout << "char: '" << c << "'" << endl;
 	else
@@ -147,7 +143,6 @@ void	ScalarConverter::printFloat(float num, string str)
 void	ScalarConverter::printDouble(double num, string str)
 {
 	long double large = strtold(str.c_str(), NULL);
-
 	if(large > std::numeric_limits<double>::max() || large < -std::numeric_limits<double>::max())
 		cout << "double: Over/Under Flow" << endl;
 	else
@@ -216,6 +211,8 @@ void 	ScalarConverter::convert(string str)
 {
 	if(check_pseudo(str))
 		return ;
+	if(check_Char(str))
+		return;
 	if(check_gibberish(str))
 	{
 		cout << "char: Nonsense" << endl;
@@ -224,8 +221,6 @@ void 	ScalarConverter::convert(string str)
 		cout << "double: Nonsense" << endl;
 		return;
 	}
-	if(check_Char(str))
-		return;
 	if(check_Int(str))
 		return;
 	if(check_Float(str))

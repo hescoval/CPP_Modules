@@ -9,7 +9,7 @@ static void correct_usage()
 
 int        main(int ac, char **av)
 {
-    if (ac != 2)
+    if (ac != 2 || (ac == 2 && av[1][0] == '\0'))
         correct_usage();
 
     ScalarConverter::convert(string(av[1]));
