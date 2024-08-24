@@ -1,5 +1,5 @@
 MAKEFLAGS += --no-print-directory
-NAME = Serializer
+NAME = dynamic_casting
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
