@@ -13,10 +13,10 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+	
+	Fixed small(a);
 
-	Fixed small(1);
-
-	Fixed big(2);
+	Fixed big(b);
 
 	cout << "\n---------Comparison operator test---------\n" << endl;
 
