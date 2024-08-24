@@ -8,15 +8,15 @@ class ScalarConverter
 {
 
 	public:
-
-		ScalarConverter();
-		ScalarConverter( ScalarConverter const & src );
-		virtual ~ScalarConverter() = 0;
+		virtual ~ScalarConverter();
 		static void convert(string str);	
 
 		ScalarConverter &		operator=( ScalarConverter const & rhs );
 
 	private:
+
+		ScalarConverter();
+		ScalarConverter( ScalarConverter const & src );
 		static void 		printChar(char c, string str);
 		static void 		printInt(int num, string str);
 		static void 		printFloat(float num, string str);
