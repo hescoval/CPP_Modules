@@ -3,13 +3,13 @@
 template <typename T>
 void print(T &elem)
 {
-    cout << CYAN << "\n" << elem; 
+    cout << CYAN << "[" <<  elem << "] -> " << RESET; 
 }
 
 template <typename T>
 void print(const T &elem)
 {
-    cout << CYAN << "\n" << elem; 
+    cout << CYAN << "[" <<  elem << "] -> " << RESET; 
 }
 
 template <typename T>
