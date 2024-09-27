@@ -3,20 +3,20 @@
 
 #include "general.hpp"
 #include <deque>
+#include <stack>
 
-template<typename T, typename Container = std::deque<T>>
+template<typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
-	using std::stack<T, Container>::c;
 	public:
 
-		MutantStack();
-		MutantStack( MutantStack const & src );
-		~MutantStack();
+		MutantStack(){}
+		MutantStack( MutantStack const & src ){*this = src;}
+		~MutantStack(){}
 
-		typedef typename std::stack<T, Container>::container_type::iterator iterator;
-		iterator	begin();
-		iterator	end();
+		typedef typename Container::iterator iterator;
+		iterator	begin()	{	return this->c.begin();	};
+		iterator	end()	{	return this->c.end();	};
 
 
 		MutantStack &		operator=( MutantStack const & rhs );
