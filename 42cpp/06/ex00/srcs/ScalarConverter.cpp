@@ -176,16 +176,13 @@ bool	ScalarConverter::check_pseudo(string str)
 
 bool	ScalarConverter::check_gibberish(string str)
 {
-	string valid_chars("0123456789.f-+");
+	string valid_chars("0123456789.+");
 	string digits("0123456789");
 	size_t f_loc = str.find_last_of("f");
 	size_t dot_loc = str.find_last_of(".");
-	size_t minus_sign = str.find_last_of('-');
 	size_t plus_sign = str.find_last_of('+');
 
-	if(	(minus_sign != string::npos && plus_sign != string::npos) ||
-		(minus_sign != string::npos && minus_sign != 0)			 || 
-		(plus_sign != string::npos && plus_sign != 0))
+	if((plus_sign != string::npos && plus_sign != 0))
 		return true;
 
 	if(str.find_first_of(digits) == std::string::npos)
@@ -194,9 +191,6 @@ bool	ScalarConverter::check_gibberish(string str)
 	for(size_t i = 0; i < str.size(); i++)
 		if(valid_chars.find_first_of(str[i]) == std::string::npos)
 			return true;
-
-	if(f_loc != std::string::npos && (str.find_first_of("f") != f_loc || f_loc != str.size() - 1 ))
-		return true;
 
 	if(dot_loc != std::string::npos && (str.find_first_of(".") != dot_loc || dot_loc > f_loc))
 		return true;
