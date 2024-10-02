@@ -62,7 +62,7 @@ void	BitcoinExchange::check_holdings()
 	{
 		find_date_match(user_it->first, user_it->second, value_at_date);
 		if(value_at_date == DATE_MATCH_NOT_FOUND)
-			std::cerr << BOLD RED "Error, Skipping the [" BOLD CYAN "key, value" BOLD RED "] pair: [" BOLD CYAN << user_it->first << ", " << user_it->second << BOLD RED "] (Reason: " << BOLD CYAN "No earlier/matching date found in the data.csv file)\n" RESET;
+			std::cerr << BOLD RED "Error, Skipping the [" BOLD CYAN "key, value" BOLD RED "] pair: [" BOLD CYAN << user_it->first << ", " << user_it->second << BOLD RED "]\nReason: " << BOLD CYAN "No earlier/matching date found in the data.csv file\n" RESET;
 		else
 			std::cout << "At " GREEN << user_it->first << RESET " user had " CYAN << user_it->second << RESET " BTC valued at a total of " BOLD CYAN
 			<< value_at_date << RESET << std::endl;
@@ -163,14 +163,14 @@ void BitcoinExchange::set_values(std::multimap<string, double>& map, string file
 		}
 		catch(std::exception &e)
 		{
-			std::cerr << BOLD RED "Error, Skipping line [" GREEN << line <<  BOLD RED "]:\n" BOLD CYAN << buffer << BOLD RED "\nReason: " BOLD CYAN << e.what() << RESET "\n\n\n";
+			std::cerr << BOLD RED "Error, Skipping line [" GREEN << line <<  BOLD RED "]: " BOLD CYAN "\""<< buffer << "\"" BOLD RED "\nReason: " BOLD CYAN << e.what() << RESET "\n\n\n";
 			continue;
 		}
 
 		value = strtod(buffer.substr(buffer.find(delim) + 1).c_str(), NULL);
 		if((value < 0 || value > 1000 ) && map == user_holdings)
 		{
-			std::cerr << BOLD RED "Error, Skipping line [" GREEN << line <<  BOLD RED "]:\n" BOLD CYAN << buffer << BOLD RED "\nReason: " BOLD CYAN "Value must be between 0 and 1000" << RESET "\n\n\n";
+			std::cerr << BOLD RED "Error, Skipping line [" GREEN << line <<  BOLD RED "]: " BOLD CYAN "\"" << buffer << "\"" BOLD RED "\nReason: " BOLD CYAN "Value must be between 0 and 1000" << RESET "\n\n\n";
 			continue;
 		}
 		map.insert(std::pair<string, double>(key, value));

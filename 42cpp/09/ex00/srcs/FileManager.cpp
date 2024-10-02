@@ -33,7 +33,7 @@ void FileManager::read_from(string file_name)
 	if(infile.fail())
 	{
 		infile.close();
-		throw std::runtime_error("File \"" + file_name + "\" can't be opened or doesn't exist.");
+		throw std::runtime_error(RED "File \"" BOLD BLUE + file_name + RED"\" can't be opened or doesn't exist." RESET);
 	}
 }
 
