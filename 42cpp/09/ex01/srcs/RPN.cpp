@@ -65,7 +65,6 @@ void		RPN::evaluate_operation(std::stack<double> &stack, char op)
 void		RPN::input_treatment(string &input)
 {
 
-	const string operators = "+-*/";
 	trim(input);
 	replace_whitespace(input);
 	if(input.find_first_not_of("0123456789+-*/ ") != string::npos)
